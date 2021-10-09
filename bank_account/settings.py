@@ -23,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*njkt%2%zx!n&lbz_sifm_&b3y%*x7s5u+=_m@4w4@0f4z)djr'
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = [env('DJANGO_HOST')]
 
 
 # Application definition
@@ -43,12 +43,14 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    'django_extensions',
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters'
 ]
 
 LOCAL_APPS = [
+    'users.apps.UsersConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -83,6 +85,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bank_account.wsgi.application'
 
+# Users & Authentication
+AUTH_USER_MODEL = 'users.User'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

@@ -15,7 +15,7 @@ djangorestframework==3.12.4
 django-filter==21.1
 
 # JWT
-pyjwt==2.2.0
+pyjwt==1.7.1
 
 # Passwords security
 argon2-cffi==21.1.0

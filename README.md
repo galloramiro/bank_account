@@ -12,6 +12,8 @@ $ docker-compose up --build
 Environment variable | Example value | Required | Default
 --- | --- | --- | --- 
 PYTHONDONTWRITEBYTECODE  | 1 | YES | 1
+DJANGO_DEBUG  | True | YES | 
+DJANGO_HOST  | True | YES | 
 DJANGO_DEBUG  | True | YES | True
 DATABASE_URL  | `postgres://USER:PASSWORD@HOST:PORT/NAME` | YES | 
 POSTGRES_HOST  | HOST | YES | 
