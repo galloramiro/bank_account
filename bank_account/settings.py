@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     'users.apps.UsersConfig',
+    'accounts.apps.AccountConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
