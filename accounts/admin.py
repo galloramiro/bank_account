@@ -17,4 +17,12 @@ class CurrencyAdmin(admin.ModelAdmin):
     list_filter = ("name", "is_active")
 
 
+class TransferAdmin(admin.ModelAdmin):
+    """User model admin."""
+
+    list_display = ("amount", "date", "user_from", "user_to")
+    list_filter = ("amount", "date", "user_from", "user_to")
+
+
 admin.site.register(Currency, CurrencyAdmin)
+admin.site.register(Transfer, TransferAdmin)
