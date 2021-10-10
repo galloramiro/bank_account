@@ -2,7 +2,7 @@
 from django.db import models
 
 # Models
-from users.models import User
+from accounts.models import Account
 
 
 class Transfer(models.Model):
@@ -12,5 +12,5 @@ class Transfer(models.Model):
     """
     amount = models.DecimalField(decimal_places=5, max_digits=20)
     date = models.DateTimeField(auto_now=True)
-    user_from = models.ForeignKey(User, on_delete=models.RESTRICT, related_name='user_from')
-    user_to = models.ForeignKey(User, on_delete=models.RESTRICT, related_name='user_to')
+    account_from = models.ForeignKey(Account, on_delete=models.RESTRICT, related_name='account_from')
+    account_to = models.ForeignKey(Account, on_delete=models.RESTRICT, related_name='account_to')

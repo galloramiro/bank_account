@@ -13,4 +13,4 @@ class TransferModelSerializer(serializers.ModelSerializer):
     class Meta:
         """Meta class."""
         model = Transfer
-        fields = ("amount", "date", "user_from", "user_to")
+        fields = ("amount", "date", "account_from", "account_to")
