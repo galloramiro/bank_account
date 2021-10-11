@@ -1,4 +1,4 @@
-"""Currency serializers"""
+"""Transfer serializers"""
 
 # Django REST Framework
 from rest_framework import serializers
