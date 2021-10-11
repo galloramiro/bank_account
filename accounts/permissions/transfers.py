@@ -1,14 +1,14 @@
-"""Account permission classes."""
+"""Transactions permission classes."""
 
 # Django REST Framework
 from rest_framework.permissions import BasePermission
 
 
-class IsAccountOwner(BasePermission):
+class IsTransfersAccountOwner(BasePermission):
     """Allow access only to account owners."""
 
-    def has_object_permission(self, request, view, account):
+    def has_object_permission(self, request, view, transfers):
         """Check that the obj and user are equivalent"""
-        if request.user == account.user:
+        if request.user == transfers.account_from.user:
             return True
         return False

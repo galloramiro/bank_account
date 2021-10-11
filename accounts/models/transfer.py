@@ -12,5 +12,5 @@ class Transfer(models.Model):
     """
     amount = models.DecimalField(decimal_places=5, max_digits=20)
     date = models.DateTimeField(auto_now=True)
-    account_from = models.ForeignKey(Account, on_delete=models.RESTRICT, related_name='account_from')
-    account_to = models.ForeignKey(Account, on_delete=models.RESTRICT, related_name='account_to')
+    account_from = models.ForeignKey(Account, on_delete=models.RESTRICT, related_name='transfers_made')
+    account_to = models.ForeignKey(Account, on_delete=models.RESTRICT, related_name='transfers_received')
