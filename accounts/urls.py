@@ -7,10 +7,14 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
 # Views
-from accounts.views import CurrencyViewSet
+from accounts.views import (
+    AccountViewSet,
+    CurrencyViewSet,
+)
 
 
 router = DefaultRouter()
+router.register(r"accounts", AccountViewSet, basename="accounts")
 router.register(r"currencies", CurrencyViewSet, basename="currencies")
 
 urlpatterns = [

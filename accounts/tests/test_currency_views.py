@@ -10,7 +10,6 @@ from rest_framework.test import APIClient
 
 # Factories
 from accounts.tests.factories import CurrencyrFactory
-from users.tests.factories import UserFactory
 
 
 @pytest.fixture
