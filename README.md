@@ -6,7 +6,8 @@ The project have one simply Users app, that allows you to verify the account by 
 For the emulation of the bank_account the app have 3 models:
 - Account
 - Currency
-- Tansfers
+- Tansfers  
+
 You could interact with each of this models by the differents endpoints. 
 You can see the examples on the tests. 
 
