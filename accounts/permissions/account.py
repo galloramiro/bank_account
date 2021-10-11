@@ -10,12 +10,8 @@ from accounts.models import Account
 class IsAccountOwner(BasePermission):
     """Allow access only to account owners."""
 
-    def has_object_permission(self, request, view, obj):
+    def has_object_permission(self, request, view, account):
         """Check that the obj and user are equivalent"""
-        try:
-            Account.objects.get(
-                user=request.user,
-            )
-        except Account.DoesNotExist:
-            return False
-        return True
+        if request.user == account.user:
+            return True
+        return False
